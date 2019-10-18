@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Clock</title>
+</head>
+<style>
+.clock{
+    display: inline-flex;
+    margin-left: 500px;
+}
+.clock p{
+    font-size: 50px;
+}
+</style>
+<body onload="p();">
+<div class="clock">
+    <p id="o"></p>&nbsp;&nbsp; 
+    <p id="s"></p>&nbsp;&nbsp; 
+    <p id="g"></p>&nbsp;&nbsp; 
+</div>    
+
+<script>
+        function p() {
+            var today = new Date();
+            var h = today.getHours();
+            var m = today.getMinutes();
+            var s = today.getSeconds();
+            
+            document.getElementById('o').innerHTML = h;
+            document.getElementById('s').innerHTML = m;
+            document.getElementById('g').innerHTML = s;
+            var t = setTimeout(p, 500);
+        }
+
+        function checkTime(i) {
+            if (i < 10) {
+                i = "0" + i
+            };
+            return i;
+        }
+</script>
+</body>
+</html>
